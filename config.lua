@@ -1,4 +1,21 @@
 --[[
+    ██╗     ██╗  ██╗██████╗ 
+    ██║     ╚██╗██╔╝██╔══██╗
+    ██║      ╚███╔╝ ██████╔╝
+    ██║      ██╔██╗ ██╔══██╗
+    ███████╗██╔╝ ██╗██║  ██║
+    ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝
+    ██████╗  █████╗ ███╗   ██╗██╗  ██╗██╗███╗   ██╗ ██████╗ 
+    ██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝██║████╗  ██║██╔════╝ 
+    ██████╔╝███████║██╔██╗ ██║█████╔╝ ██║██╔██╗ ██║██║  ███╗
+    ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ ██║██║╚██╗██║██║   ██║
+    ██████╔╝██║  ██║██║ ╚████║██║  ██╗██║██║ ╚████║╚██████╔╝
+    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝
+
+    🐺 LXR Banking System — Full Service Bank Management
+
+    This configuration file controls bank locations, door hashes, and
+    framework settings for the LXR Banking resource.
     ██╗     ██╗  ██╗██████╗        ██████╗  █████╗ ███╗   ██╗██╗  ██╗██╗███╗   ██╗ ██████╗
     ██║     ╚██╗██╔╝██╔══██╗      ██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝██║████╗  ██║██╔════╝
     ██║      ╚███╔╝ ██████╔╝█████╗██████╔╝███████║██╔██╗ ██║█████╔╝ ██║██╔██╗ ██║██║  ███╗
@@ -6,11 +23,11 @@
     ███████╗██╔╝ ██╗██║  ██║      ██████╔╝██║  ██║██║ ╚████║██║  ██╗██║██║ ╚████║╚██████╔╝
     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝
 
-    🐺 LXR Banking System
+    🐺 LXR Core - Banking System
 
     This configuration file controls the banking system for RedM.
-    Players can manage bank accounts, savings accounts, business accounts,
-    gang accounts, and debit/credit cards through a fully featured UI.
+    Players can manage bank accounts, savings, business funds, gang accounts,
+    and debit cards directly from in-game bank locations and ATMs.
 
     ═══════════════════════════════════════════════════════════════════════════════
     SERVER INFORMATION
@@ -27,6 +44,18 @@
     Discord:     https://discord.gg/CrKcWdfd3A
     GitHub:      https://github.com/iBoss21
     Store:       https://theluxempire.tebex.io
+
+    ═══════════════════════════════════════════════════════════════════════════════
+
+    Version:           1.0.1
+    Performance Target: Optimized for minimal server overhead and client FPS impact
+
+    Tags: RedM, Banking, Economy, Whitelist, SeriousRP, Georgian
+
+    Framework Support:
+    - LXR Core  (Primary)
+    - RSG Core  (Compatible)
+    - VORP Core (Compatible)
     Server:      https://servers.redm.net/servers/detail/8gj7eb
 
     ═══════════════════════════════════════════════════════════════════════════════
@@ -34,7 +63,7 @@
     Version: 1.0.1
     Performance Target: Optimized for minimal server overhead and client FPS impact
 
-    Tags: RedM, Georgian, SeriousRP, Whitelist, Banking, Economy, Accounts
+    Tags: RedM, Georgian, SeriousRP, Whitelist, Banking, Economy, Finance
 
     Framework Support:
     - LXR Core (Primary)
@@ -206,6 +235,10 @@ Config.BankLocations = {
     {name = 'Valentine Savings Bank',   bankType = "BANKS3",    coords = vector3(-308.4189, 775.8842, 118.7017),    showblip = true},
     {name = 'First National Bank',      bankType = "BANKS4",    coords = vector3(-813.1633, -1277.486, 43.63771),   showblip = true},
 }
+
+-- ████████████████████████████████████████████████████████████████████████████████
+-- ████████████████████████ BANK DOORS ████████████████████████████████████████████
+-- ████████████████████████████████████████████████████████████████████████████████
 
 Config.BankDoors = { --Doors that will always be open unless robbery has started
 	-- Valentine Savings Bank
