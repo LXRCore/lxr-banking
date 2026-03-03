@@ -1,4 +1,21 @@
 --[[
+    ██╗     ██╗  ██╗██████╗ 
+    ██║     ╚██╗██╔╝██╔══██╗
+    ██║      ╚███╔╝ ██████╔╝
+    ██║      ██╔██╗ ██╔══██╗
+    ███████╗██╔╝ ██╗██║  ██║
+    ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝
+    ██████╗  █████╗ ███╗   ██╗██╗  ██╗██╗███╗   ██╗ ██████╗ 
+    ██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝██║████╗  ██║██╔════╝ 
+    ██████╔╝███████║██╔██╗ ██║█████╔╝ ██║██╔██╗ ██║██║  ███╗
+    ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ ██║██║╚██╗██║██║   ██║
+    ██████╔╝██║  ██║██║ ╚████║██║  ██╗██║██║ ╚████║╚██████╔╝
+    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝
+
+    🐺 LXR Banking System — Full Service Bank Management
+
+    This configuration file controls bank locations, door hashes, and
+    framework settings for the LXR Banking resource.
     ██╗     ██╗  ██╗██████╗        ██████╗  █████╗ ███╗   ██╗██╗  ██╗██╗███╗   ██╗ ██████╗
     ██║     ╚██╗██╔╝██╔══██╗      ██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝██║████╗  ██║██╔════╝
     ██║      ╚███╔╝ ██████╔╝█████╗██████╔╝███████║██╔██╗ ██║█████╔╝ ██║██╔██╗ ██║██║  ███╗
@@ -27,6 +44,18 @@
     Discord:     https://discord.gg/CrKcWdfd3A
     GitHub:      https://github.com/iBoss21
     Store:       https://theluxempire.tebex.io
+
+    ═══════════════════════════════════════════════════════════════════════════════
+
+    Version:           1.0.1
+    Performance Target: Optimized for minimal server overhead and client FPS impact
+
+    Tags: RedM, Banking, Economy, Whitelist, SeriousRP, Georgian
+
+    Framework Support:
+    - LXR Core  (Primary)
+    - RSG Core  (Compatible)
+    - VORP Core (Compatible)
     Server:      https://servers.redm.net/servers/detail/8gj7eb
 
     ═══════════════════════════════════════════════════════════════════════════════
@@ -88,6 +117,17 @@ Config = {}
 -- ████████████████████████████████████████████████████████████████████████████████
 
 Config.ServerInfo = {
+    name        = 'The Land of Wolves 🐺',
+    tagline     = 'Georgian RP 🇬🇪 | მგლების მიწა - რჩეულთა ადგილი!',
+    description = 'ისტორია ცოცხლდება აქ!', -- History Lives Here!
+    type        = 'Serious Hardcore Roleplay',
+    access      = 'Discord & Whitelisted',
+
+    -- Contact & Links
+    website      = 'https://www.wolves.land',
+    discord      = 'https://discord.gg/CrKcWdfd3A',
+    github       = 'https://github.com/iBoss21',
+    store        = 'https://theluxempire.tebex.io',
     name = 'The Land of Wolves 🐺',
     tagline = 'Georgian RP 🇬🇪 | მგლების მიწა - რჩეულთა ადგილი!',
     description = 'ისტორია ცოცხლდება აქ!', -- History Lives Here!
@@ -105,6 +145,7 @@ Config.ServerInfo = {
     developer = 'iBoss21 / The Lux Empire',
 
     -- Tags
+    tags = { 'RedM', 'Georgian', 'SeriousRP', 'Whitelist', 'Banking', 'Economy' }
     tags = {'RedM', 'Georgian', 'SeriousRP', 'Whitelist', 'Banking', 'Economy', 'Finance'}
 }
 
@@ -114,6 +155,13 @@ Config.ServerInfo = {
 
 --[[
     Framework Priority (in order):
+    1. LXR-Core  (Primary)
+    2. RSG-Core  (Primary)
+    3. VORP Core (Supported)
+    4. Standalone (Fallback)
+]]
+
+Config.Framework = 'lxr-core' -- Options: 'lxr-core', 'rsg-core', 'vorp_core', 'standalone'
     1. LXR-Core (Primary)
     2. RSG-Core (Primary)
     3. VORP Core (Supported)
@@ -128,6 +176,12 @@ Config.Framework = 'lxr-core' -- 'auto' or manual: 'lxr-core', 'rsg-core', 'vorp
 -- Framework-specific settings
 Config.FrameworkSettings = {
     ['lxr-core'] = {
+        resource      = 'lxr-core',
+        notifications = 'lxr-core',
+        inventory     = 'lxr-inventory',
+        events = {
+            server   = 'lxr-core:server:%s',
+            client   = 'lxr-core:client:%s',
         resource = 'lxr-core',
         notifications = 'ox_lib',
         inventory = 'lxr-inventory',
@@ -139,6 +193,12 @@ Config.FrameworkSettings = {
         }
     },
     ['rsg-core'] = {
+        resource      = 'rsg-core',
+        notifications = 'rsg-core',
+        inventory     = 'rsg-inventory',
+        events = {
+            server   = 'RSGCore:Server:%s',
+            client   = 'RSGCore:Client:%s',
         resource = 'rsg-core',
         notifications = 'ox_lib',
         inventory = 'rsg-inventory',
@@ -150,6 +210,9 @@ Config.FrameworkSettings = {
         }
     },
     ['vorp_core'] = {
+        resource      = 'vorp_core',
+        notifications = 'vorp',
+        inventory     = 'vorp_inventory',
         resource = 'vorp_core',
         notifications = 'vorp',
         inventory = 'vorp_inventory',
@@ -159,6 +222,9 @@ Config.FrameworkSettings = {
             client = 'vorp:client:%s'
         }
     },
+    ['standalone'] = {
+        notifications = 'print',
+        inventory     = 'none'
     ['redem_roleplay'] = {
         resource = 'redem_roleplay',
         notifications = 'redem',
@@ -211,6 +277,46 @@ Config.BankLocations = {
 -- ████████████████████████ BANK DOORS ████████████████████████████████████████████
 -- ████████████████████████████████████████████████████████████████████████████████
 
+Config.BankDoors = { --Doors that will always be open unless robbery has started
+	-- Valentine Savings Bank
+	2642457609, -- main door
+	3886827663, -- main door
+	1340831050, -- bared right
+	2343746133, -- bared left
+	334467483, -- inner door1
+	3718620420, -- inner door2
+	576950805, -- vault door
+	
+	-- Bank of Rhodes
+	3317756151, -- main door
+	3088209306, -- main door
+	2058564250, -- inner door1
+	3142122679, -- inner door2
+	1634148892, -- inner door3
+	3483244267, -- vault
+  
+	-- Lemoyne National Bank Saint Denis
+	2158285782, -- main door
+	1733501235, -- main door
+	2089945615, -- main door
+	2817024187, -- main door
+	1830999060, -- inner private door
+	965922748, -- manager door
+	1634115439, -- manager door
+	1751238140, -- vault
+	
+	-- West Elizabeth Co-Operative Bank Blackwater
+	531022111, -- main door
+	2117902999, -- inner door
+	2817192481, -- manager door
+	1462330364, -- vault door
+	
+	-- Bank of Armadillo
+	3101287960, -- main door
+	3550475905, -- inner door
+	1329318347, -- inner door
+	1366165179, -- back door
+}
 Config.BankDoors = { -- Doors that will always be open unless robbery has started
     -- Valentine Savings Bank
     2642457609, -- main door

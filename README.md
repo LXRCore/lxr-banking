@@ -1,3 +1,31 @@
+# 🐺 LXR Banking System — wolves.land
+
+```
+██╗     ██╗  ██╗██████╗      ██████╗  █████╗ ███╗   ██╗██╗  ██╗██╗███╗   ██╗ ██████╗ 
+██║     ╚██╗██╔╝██╔══██╗     ██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝██║████╗  ██║██╔════╝ 
+██║      ╚███╔╝ ██████╔╝     ██████╔╝███████║██╔██╗ ██║█████╔╝ ██║██╔██╗ ██║██║  ███╗
+██║      ██╔██╗ ██╔══██╗     ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ ██║██║╚██╗██║██║   ██║
+███████╗██╔╝ ██╗██║  ██║     ██████╔╝██║  ██║██║ ╚████║██║  ██╗██║██║ ╚████║╚██████╔╝
+╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝     ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝
+```
+
+> **Full Service Bank Management for RedM** | Powered by [LXR Core](https://github.com/LXRCore)
+
+---
+
+## 📋 Server Information
+
+| Field       | Value                                           |
+|-------------|-------------------------------------------------|
+| **Server**  | The Land of Wolves 🐺                          |
+| **Dev**     | iBoss21 / The Lux Empire                        |
+| **Website** | https://www.wolves.land                         |
+| **Discord** | https://discord.gg/CrKcWdfd3A                  |
+| **Store**   | https://theluxempire.tebex.io                   |
+
+---
+
+## 🖼️ Screenshots
 ```
     ██╗     ██╗  ██╗██████╗        ██████╗  █████╗ ███╗   ██╗██╗  ██╗██╗███╗   ██╗ ██████╗
     ██║     ╚██╗██╔╝██╔══██╗      ██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝██║████╗  ██║██╔════╝
@@ -28,6 +56,45 @@ directly from in-game bank locations and ATMs.
 ---
 
 ## ✨ Features
+
+- Full player interaction with bank, job, gang, and shared accounts
+- Ability to open and manage a savings account
+- View live cash and bank balance
+- Withdraw, Deposit, and Transfer funds
+- Business and gang account support
+- Bank door management (auto-lock / auto-unlock)
+- Integrated logging via `lxr-log`
+
+---
+
+## 🔧 Framework Support
+
+| Framework     | Status        |
+|---------------|---------------|
+| **LXR Core**  | ✅ Primary    |
+| **RSG Core**  | ✅ Compatible |
+| **VORP Core** | ✅ Compatible |
+| Standalone    | ⚠️ Fallback   |
+
+---
+
+## 📦 Installation
+
+1. Download the resource and place the `lxr-banking` folder in your `[lxr]` directory.
+2. Import `lxr-banking.sql` into your database.
+3. Ensure `lxr-core` is started **before** `lxr-banking` in your `server.cfg`.
+4. Add `ensure lxr-banking` to your `server.cfg`.
+5. Configure `config.lua` to match your server setup.
+
+---
+
+## ⚙️ Dependencies
+
+- [lxr-core](https://github.com/LXRCore/lxr-core)
+- [oxmysql](https://github.com/overextended/oxmysql)
+
+---
+
 
 - 🏦 Player bank account management (deposit, withdraw, transfer)
 - 💰 Savings account support
@@ -85,5 +152,7 @@ directly from in-game bank locations and ATMs.
 
 ```
 © 2026 iBoss21 / The Lux Empire | wolves.land | All Rights Reserved
+LXR Core RedM Framework — lxr-banking
 LXR Core RedM Framework - Banking System
 ```
+
